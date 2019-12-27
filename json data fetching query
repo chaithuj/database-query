@@ -1,0 +1,4 @@
+SELECT y.x->'subtag' "name" FROM tablename jt, 
+LATERAL (SELECT json_array_elements(jt.colName -> 'tag') x) y
+
+select colName,colName ->> 'vin' from tableName

@@ -1,0 +1,2 @@
+SELECT y.v,y.x->'insideJsonTag',y.x->'insideJsonTag' FROM tableName jt, 
+LATERAL (SELECT jt.coloumn v,json_array_elements(jt.ser_detail -> 'JsonTag') x) y 
